@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, Phone, Snowflake, X } from "lucide-react";
+import { Menu, Phone, Snowflake, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE, NAV_LINKS, callHref, whatsappHref } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
@@ -15,10 +15,9 @@ export function SiteHeader() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 text-xs">
           <span>Authorized Wholesale Dealer & Service Provider · Patna, Bihar</span>
           <div className="flex items-center gap-4">
-            <a href={callHref()} className="inline-flex items-center gap-1.5 hover:underline">
-              <Phone className="size-3.5" /> {SITE.phoneDisplay}
+            <a href={callHref()} className="inline-flex items-center gap-1.5 hover:underline" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="size-3.5" /> {SITE.phoneDisplay}
             </a>
-            <span className="opacity-70">GST: {SITE.gst}</span>
           </div>
         </div>
       </div>
@@ -52,12 +51,9 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild variant="whatsapp" size="sm" className="hidden sm:inline-flex">
-            <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          </Button>
-          <Button asChild variant="hero" size="sm">
-            <a href={callHref()}>
-              <Phone className="size-4" /> Call Now
+          <Button asChild variant="whatsapp" size="sm">
+            <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="size-4" /> WhatsApp Enquiry
             </a>
           </Button>
           <button

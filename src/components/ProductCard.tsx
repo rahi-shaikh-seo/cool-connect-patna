@@ -1,7 +1,7 @@
-import { Phone, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { type Product, callHref, whatsappHref } from "@/lib/site-data";
+import { type Product, whatsappHref } from "@/lib/site-data";
 
 export function ProductCard({ product }: { product: Product }) {
   const enquiry = `Hello Patna Aircon, I would like an enquiry/quotation for: ${product.name}.`;
@@ -23,15 +23,10 @@ export function ProductCard({ product }: { product: Product }) {
         </span>
         <h3 className="mt-1 text-base font-semibold text-navy">{product.name}</h3>
         <p className="mt-2 flex-1 text-sm text-muted-foreground">{product.description}</p>
-        <div className="mt-4 flex gap-2">
-          <Button asChild variant="whatsapp" size="sm" className="flex-1">
+        <div className="mt-4">
+          <Button asChild variant="whatsapp" size="sm" className="w-full">
             <a href={whatsappHref(enquiry)} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="size-4" /> Enquiry Now
-            </a>
-          </Button>
-          <Button asChild variant="hero" size="sm" className="flex-1">
-            <a href={callHref()}>
-              <Phone className="size-4" /> Call Now
             </a>
           </Button>
         </div>

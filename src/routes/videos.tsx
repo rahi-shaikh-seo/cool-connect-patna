@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Video, Phone, MessageCircle } from "lucide-react";
+import { Video, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBanner } from "@/components/CtaBanner";
-import { callHref, whatsappHref } from "@/lib/site-data";
+import { whatsappHref } from "@/lib/site-data";
 
 export const Route = createFileRoute("/videos")({
   head: () => ({
@@ -53,10 +53,7 @@ function VideosPage() {
             Contact Patna Aircon and we'll share videos and details for the AC product or cooling
             solution you're interested in.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Button asChild variant="hero" size="lg">
-              <a href={callHref()}><Phone className="size-4" /> Call Now</a>
-            </Button>
+          <div className="mt-6 flex justify-center">
             <Button asChild variant="whatsapp" size="lg">
               <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="size-4" /> WhatsApp Enquiry

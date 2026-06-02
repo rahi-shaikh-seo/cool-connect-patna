@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone, Mail, Snowflake } from "lucide-react";
+import { MapPin, Phone, Mail, Snowflake, MessageCircle } from "lucide-react";
 import { SITE, NAV_LINKS, CATEGORIES, callHref, whatsappHref } from "@/lib/site-data";
 
 export function SiteFooter() {
@@ -17,7 +17,6 @@ export function SiteFooter() {
             Authorized wholesale dealer and service provider of air conditioning and
             cooling products in Patna, Bihar. Established 2020.
           </p>
-          <p className="mt-3 text-xs text-navy-foreground/60">GST: {SITE.gst}</p>
         </div>
 
         <div>
@@ -60,8 +59,8 @@ export function SiteFooter() {
               <span>{SITE.address}</span>
             </li>
             <li className="flex gap-2.5">
-              <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
-              <a href={callHref()} className="hover:underline">{SITE.phoneDisplay}</a>
+              <MessageCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+              <a href={callHref()} className="hover:underline" target="_blank" rel="noopener noreferrer">{SITE.phoneDisplay}</a>
             </li>
             <li className="flex gap-2.5">
               <Mail className="mt-0.5 size-4 shrink-0 text-primary" />

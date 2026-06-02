@@ -15,10 +15,9 @@ export const SITE = {
   established: "2020",
   experience: "5 Years",
   rating: "5.0",
-  gst: "10**********1ZP",
-  phoneDisplay: "+91 90000 00000",
-  phoneDial: "+919000000000",
-  whatsappNumber: "919000000000",
+  phoneDisplay: "+91 80476 59491",
+  phoneDial: "+918047659491",
+  whatsappNumber: "918047659491",
   email: "info@patnaaircon.com",
   address: "Near Tamtam Parao, Phulwari Sharif, Patna, Bihar",
   mapEmbed:
@@ -27,7 +26,7 @@ export const SITE = {
 } as const;
 
 export function callHref() {
-  return `tel:${SITE.phoneDial}`;
+  return whatsappHref("Hello Patna Aircon, I would like to enquire about your AC products and services.");
 }
 
 export function whatsappHref(message?: string) {

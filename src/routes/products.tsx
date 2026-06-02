@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/ProductCard";
 import { CtaBanner } from "@/components/CtaBanner";
-import { CATEGORIES, ALL_PRODUCTS, callHref, whatsappHref } from "@/lib/site-data";
+import { CATEGORIES, ALL_PRODUCTS, whatsappHref } from "@/lib/site-data";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -55,10 +55,7 @@ function ProductsPage() {
             Premium air conditioning and cooling solutions for residential, commercial and
             industrial needs in Patna and nearby areas.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Button asChild variant="hero" size="lg">
-              <a href={callHref()}><Phone className="size-4" /> Call Now</a>
-            </Button>
+          <div className="mt-6 flex justify-center">
             <Button asChild variant="whatsapp" size="lg">
               <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="size-4" /> WhatsApp Enquiry

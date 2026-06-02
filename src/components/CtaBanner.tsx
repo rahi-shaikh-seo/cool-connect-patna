@@ -1,6 +1,6 @@
-import { Phone, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { callHref, whatsappHref } from "@/lib/site-data";
+import { whatsappHref } from "@/lib/site-data";
 
 export function CtaBanner() {
   return (
@@ -10,18 +10,13 @@ export function CtaBanner() {
           Need AC, Chiller, VRF or Installation Service in Patna?
         </h2>
         <p className="max-w-2xl text-primary-foreground/85">
-          Call Patna Aircon today for product details and the best quotation on air
+          Contact Patna Aircon today on WhatsApp for product details and the best quotation on air
           conditioning and cooling solutions.
         </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <Button asChild variant="navy" size="xl">
-            <a href={callHref()}>
-              <Phone className="size-5" /> Call Now
-            </a>
-          </Button>
+        <div className="flex justify-center mt-2">
           <Button asChild variant="whatsapp" size="xl">
             <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="size-5" /> WhatsApp Now
+              <MessageCircle className="size-5" /> WhatsApp Enquiry
             </a>
           </Button>
         </div>

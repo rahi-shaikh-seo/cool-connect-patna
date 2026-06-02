@@ -91,20 +91,15 @@ function Home() {
               offices, commercial spaces, and industries.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild variant="hero" size="xl">
-                <a href={callHref()}>
-                  <Phone className="size-5" /> Call Now
+              <Button asChild variant="whatsapp" size="xl">
+                <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="size-5" /> WhatsApp Enquiry
                 </a>
               </Button>
               <Button asChild variant="heroOutline" size="xl">
                 <Link to="/contact">
                   <FileText className="size-5" /> Get Free Quote
                 </Link>
-              </Button>
-              <Button asChild variant="whatsapp" size="xl">
-                <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="size-5" /> WhatsApp Enquiry
-                </a>
               </Button>
             </div>
           </div>
@@ -275,13 +270,8 @@ function Home() {
               gas charging, testing, and reliable support — so your cooling system runs efficiently
               from day one.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild variant="hero" size="lg">
-                <a href={callHref()}>
-                  <Phone className="size-4" /> Call Now
-                </a>
-              </Button>
-              <Button asChild variant="whatsapp" size="lg">
+            <div className="mt-6">
+              <Button asChild variant="whatsapp" size="lg" className="w-full sm:w-auto">
                 <a href={whatsappHref("Hello Patna Aircon, I need AC installation service.")} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="size-4" /> Book on WhatsApp
                 </a>
@@ -320,13 +310,9 @@ function Home() {
               quotation. Prefer to talk now?
             </p>
             <div className="mt-6 space-y-3 text-sm">
-              <a href={callHref()} className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-card hover:border-primary">
-                <Phone className="size-5 text-primary" />
-                <span><span className="block font-semibold text-navy">Call Now</span>{SITE.phoneDisplay}</span>
-              </a>
               <a href={whatsappHref()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-card hover:border-whatsapp">
                 <MessageCircle className="size-5 text-whatsapp" />
-                <span><span className="block font-semibold text-navy">WhatsApp Enquiry</span>Quick response on chat</span>
+                <span><span className="block font-semibold text-navy">WhatsApp Enquiry</span>{SITE.phoneDisplay} (Quick response on chat)</span>
               </a>
             </div>
           </div>

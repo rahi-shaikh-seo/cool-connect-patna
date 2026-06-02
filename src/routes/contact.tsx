@@ -27,9 +27,8 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const details = [
     { icon: MapPin, label: "Location", value: SITE.address },
-    { icon: Phone, label: "Mobile Number", value: SITE.phoneDisplay, href: callHref() },
+    { icon: MessageCircle, label: "WhatsApp Number", value: SITE.phoneDisplay, href: callHref(), target: "_blank", rel: "noopener noreferrer" },
     { icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
-    { icon: FileText, label: "GST", value: SITE.gst },
   ];
 
   return (
@@ -54,7 +53,7 @@ function ContactPage() {
                   <div>
                     <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{d.label}</div>
                     {d.href ? (
-                      <a href={d.href} className="font-medium text-navy hover:text-primary hover:underline">{d.value}</a>
+                      <a href={d.href} className="font-medium text-navy hover:text-primary hover:underline" target={d.target} rel={d.rel}>{d.value}</a>
                     ) : (
                       <div className="font-medium text-navy">{d.value}</div>
                     )}
@@ -62,13 +61,10 @@ function ContactPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild variant="hero" size="lg">
-                <a href={callHref()}><Phone className="size-4" /> Call Now</a>
-              </Button>
-              <Button asChild variant="whatsapp" size="lg">
+            <div className="mt-6">
+              <Button asChild variant="whatsapp" size="lg" className="w-full sm:w-auto">
                 <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="size-4" /> WhatsApp
+                  <MessageCircle className="size-5" /> Chat on WhatsApp
                 </a>
               </Button>
             </div>
